@@ -6,6 +6,7 @@ Release:	10
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	033f9096417977a2e9d3bce55788c302
 Patch0:		%{name}-1.0.patch
 Patch1:		%{name}-fix.patch
 Requires:	grep
