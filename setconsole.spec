@@ -5,8 +5,6 @@ Version:	1.0
 Release:	9
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-1.0.patch
 ExclusiveOS:	Linux
