@@ -1,15 +1,15 @@
-Summary: Sets the system to use either a local terminal or a serial console.
-Name: setconsole
-Version: 1.0
-Release: 8
-Copyright: GPL
-Group: Applications/System
-Source: setconsole-1.0.tar.gz
-Patch: setconsole-1.0.patch
-Exclusiveos: Linux
-Requires: /bin/sh textutils grep sed
+Summary:	Sets the system to use either a local terminal or a serial console.
+Name:		setconsole
+Version:	1.0
+Release:	9
+Copyright:	GPL
+Group:		Applications/System
+Source:		setconsole-1.0.tar.gz
+Patch:		setconsole-1.0.patch
+Exclusiveos:	Linux
+Requires:	/bin/sh textutils grep sed
+BuildRoot:	/tmp/%{name}-%{version}-root
 BuildArchitectures: noarch
-BuildRoot: /var/tmp/setconsole-root
 
 %description
 Setconsole is a basic system utility for setting up the /etc/inittab,
@@ -23,15 +23,17 @@ the system via a video card) or a serial console.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/{sbin,man/man8}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
-install -m755 setconsole $RPM_BUILD_ROOT/usr/sbin/setconsole
-install -m644 setconsole.8 $RPM_BUILD_ROOT/usr/man/man8
+install setconsole $RPM_BUILD_ROOT%{_sbindir}/setconsole
+install setconsole.8 $RPM_BUILD_ROOT%{_mandir}/man8
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man8/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-/usr/sbin/setconsole
-/usr/man/man8/setconsole.8
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_sbindir}/setconsole
+%{_mandir}/man8/setconsole.8*
