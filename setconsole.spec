@@ -8,7 +8,7 @@ Source:		setconsole-1.0.tar.gz
 Patch:		setconsole-1.0.patch
 Exclusiveos:	Linux
 Requires:	/bin/sh textutils grep sed
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArchitectures: noarch
 
 %description
