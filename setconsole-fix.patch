@@ -1,0 +1,20 @@
+--- setconsole-1.0/setconsole.orig	Fri Aug 30 21:34:48 2002
++++ setconsole-1.0/setconsole	Fri Aug 30 21:38:19 2002
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # setconsole
+ #
+@@ -8,6 +8,11 @@
+ speed=""
+ console=""
+ 
++usage () {
++    echo "usage: $0 [--speed foo] <video|serial|ttya|ttyb|cua0|cua1|ttyS0|ttyS1>" >&2
++    exit 1
++}
++
+ checkprom () {
+     [ $console != video ] && [ ! -d /proc/openprom/options ] && {
+ 	echo "/proc/openprom/options does not exist -- cannot setup console" 2>&1

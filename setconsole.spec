@@ -2,15 +2,18 @@ Summary:	Sets the system to use either a local terminal or a serial console
 Summary(pl):	Narzêdzie w³±czaj±ce korzystanie z lokalnego terminala lub konsoli szeregowej
 Name:		setconsole
 Version:	1.0
-Release:	9
+Release:	10
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-1.0.patch
-ExclusiveOS:	Linux
-Requires:	/bin/sh textutils grep sed
+Patch1:		%{name}-fix.patch
+Requires:	grep
+Requires:	sed
+Requires:	textutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
+ExclusiveOS:	Linux
 
 %description
 Setconsole is a basic system utility for setting up the /etc/inittab,
@@ -26,7 +29,8 @@ lub szeregowa.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
