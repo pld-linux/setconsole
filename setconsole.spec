@@ -1,5 +1,5 @@
 Summary:	Sets the system to use either a local terminal or a serial console
-Summary(pl.UTF-8):   Narzędzie włączające korzystanie z lokalnego terminala lub konsoli szeregowej
+Summary(pl.UTF-8):	Narzędzie włączające korzystanie z lokalnego terminala lub konsoli szeregowej
 Name:		setconsole
 Version:	1.0
 Release:	10
