@@ -1,5 +1,5 @@
 Summary:	Sets the system to use either a local terminal or a serial console
-Summary(pl):	Narzêdzie w³±czaj±ce korzystanie z lokalnego terminala lub konsoli szeregowej
+Summary(pl.UTF-8):   NarzÄ™dzie wÅ‚Ä…czajÄ…ce korzystanie z lokalnego terminala lub konsoli szeregowej
 Name:		setconsole
 Version:	1.0
 Release:	10
@@ -22,10 +22,10 @@ Setconsole is a basic system utility for setting up the /etc/inittab,
 console can be either the local terminal (i.e., directly attached to
 the system via a video card) or a serial console.
 
-%description -l pl
-setconsole to narzêdzie systemowe do ustawiania /etc/inittab,
-/dev/systty i /dev/console do obs³ugi nowej konsoli. Konsola mo¿e byæ
-lokalnym terminalem (bezpo¶rednio pod³±czonym przez kartê graficzn±)
+%description -l pl.UTF-8
+setconsole to narzÄ™dzie systemowe do ustawiania /etc/inittab,
+/dev/systty i /dev/console do obsÅ‚ugi nowej konsoli. Konsola moÅ¼e byÄ‡
+lokalnym terminalem (bezpoÅ›rednio podÅ‚Ä…czonym przez kartÄ™ graficznÄ…)
 lub szeregowa.
 
 %prep
